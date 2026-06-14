@@ -6,10 +6,13 @@
  * their real WhatsApp number, Formspree ID, analytics IDs, etc.
  */
 
-const env = (key: string, fallback = ""): string => {
-  const v = process.env[key];
-  return v && v.length > 0 ? v : fallback;
-};
+// IMPORTANT: read each NEXT_PUBLIC_* var as a STATIC `process.env.NEXT_PUBLIC_X`
+// expression. Next.js only inlines these into the CLIENT bundle when accessed
+// statically — a dynamic `process.env[key]` lookup is left undefined on the
+// client, which would make basePath empty and break client-rendered images
+// (the product modal, the project lightbox) and WhatsApp links.
+const clean = (v: string | undefined, fallback: string): string =>
+  v && v.length > 0 ? v : fallback;
 
 export const siteConfig = {
   // Brand / person
@@ -22,9 +25,9 @@ export const siteConfig = {
   },
 
   // Contact
-  email: env("NEXT_PUBLIC_EMAIL", "consult@gordonsalesguru.com"),
-  whatsappNumber: env("NEXT_PUBLIC_WHATSAPP_NUMBER", "254743831795"),
-  calendlyUrl: env("NEXT_PUBLIC_CALENDLY_URL", "https://calendly.com/gordonsalesguru"),
+  email: clean(process.env.NEXT_PUBLIC_EMAIL, "consult@gordonsalesguru.com"),
+  whatsappNumber: clean(process.env.NEXT_PUBLIC_WHATSAPP_NUMBER, "254743831795"),
+  calendlyUrl: clean(process.env.NEXT_PUBLIC_CALENDLY_URL, "https://calendly.com/gordonsalesguru"),
 
   // Location
   showroom: {
@@ -69,13 +72,13 @@ export const siteConfig = {
   ],
 
   // URLs / deployment
-  siteUrl: env("NEXT_PUBLIC_SITE_URL", "https://gordonsalesguru.com").replace(/\/$/, ""),
-  basePath: env("NEXT_PUBLIC_BASE_PATH", ""),
+  siteUrl: clean(process.env.NEXT_PUBLIC_SITE_URL, "https://gordonsalesguru.com").replace(/\/$/, ""),
+  basePath: clean(process.env.NEXT_PUBLIC_BASE_PATH, ""),
 
   // Integrations
-  formspreeId: env("NEXT_PUBLIC_FORMSPREE_ID", "xrevrldg"),
-  gaMeasurementId: env("NEXT_PUBLIC_GA_MEASUREMENT_ID", ""),
-  facebookPixelId: env("NEXT_PUBLIC_FACEBOOK_PIXEL_ID", ""),
+  formspreeId: clean(process.env.NEXT_PUBLIC_FORMSPREE_ID, "xrevrldg"),
+  gaMeasurementId: clean(process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID, ""),
+  facebookPixelId: clean(process.env.NEXT_PUBLIC_FACEBOOK_PIXEL_ID, ""),
 };
 
 export type ProductCategoryKey = "kitchens" | "wardrobes" | "bathrooms" | "fitouts";
