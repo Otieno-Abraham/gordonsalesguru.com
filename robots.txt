@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://otieno-abraham.github.io
+
+# Sitemaps
+Sitemap: https://otieno-abraham.github.io/sitemap.xml
