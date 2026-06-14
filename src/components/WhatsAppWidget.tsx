@@ -60,9 +60,9 @@ export default function WhatsAppWidget() {
 
         <div className="p-4">
           <p className="rounded-card bg-sky p-3 text-sm leading-relaxed text-ink">
-            Hi there! 👋 I&apos;m Gordon. Looking for premium kitchen cabinets,
-            wardrobes or interior fitouts in East Africa? I&apos;d love to help.
-            Chat with me directly on WhatsApp — I respond within 2 hours.
+            Hello, I&apos;m Gordon. If you are considering premium kitchens, wardrobes
+            or a complete interior fitout anywhere in East Africa, I would be glad to
+            help. Message me directly on WhatsApp and I will respond within two hours.
           </p>
           <a
             href={whatsappLink(whatsappMessages.default)}

@@ -37,9 +37,9 @@ export default function ContactPage() {
             <p className="eyebrow text-accent">Contact</p>
             <h1 className="mt-3 h1">Let&apos;s Talk About Your Project</h1>
             <p className="mt-5 text-lg text-white/80">
-              WhatsApp is usually the quickest way to reach me, and you are warmly
-              welcome to use whichever option is most convenient for you. I respond
-              within 2 hours during business hours.
+              WhatsApp is the fastest way to reach me, and I am always glad to
+              assist by phone, email or with a visit to the showroom. I respond
+              within two hours during business hours.
             </p>
           </div>
         </div>

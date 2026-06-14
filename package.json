@@ -4,7 +4,7 @@
   "private": true,
   "description": "Gordon Odhiambo — premium custom kitchens, wardrobes, bathrooms & interior fitouts across East Africa.",
   "scripts": {
-    "preprocess": "python scripts/extract-brochures.py && bash scripts/process-videos.sh",
+    "preprocess": "python scripts/extract-brochures.py && python scripts/regenerate-descriptions.py && bash scripts/process-videos.sh",
     "prebuild": "npm run preprocess",
     "dev": "next dev",
     "build": "next build",

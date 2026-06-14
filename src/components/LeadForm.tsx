@@ -100,11 +100,11 @@ export default function LeadForm({
           <Check className="h-7 w-7" />
         </div>
         <h3 className="mt-4 text-xl font-semibold text-navy">
-          Thank you! Gordon will contact you within 2 hours.
+          Thank you — Gordon will be in touch within two hours.
         </h3>
         <p className="mt-2 text-sm text-ink/70">
-          Want to skip the wait? Message Gordon directly and he&apos;ll get
-          straight back to you.
+          Prefer to speak sooner? Message Gordon directly on WhatsApp and he will
+          respond personally.
         </p>
         <a
           href={waHref}

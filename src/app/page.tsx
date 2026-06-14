@@ -58,8 +58,9 @@ export default function HomePage() {
               Premium Kitchens, Wardrobes &amp; Interiors — Delivered Across East Africa
             </h1>
             <p className="mt-5 max-w-2xl text-lg text-white/80">
-              I&apos;m Gordon Odhiambo, your personal interior solutions expert. From first
-              consultation to final installation — I handle everything.
+              I&apos;m Gordon Odhiambo, your personal interior solutions expert. From the
+              first consultation to the final installation, I personally oversee every
+              detail.
             </p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <a
@@ -263,12 +264,12 @@ export default function HomePage() {
       <section id="consultation" className="section bg-white">
         <div className="container-x grid items-center gap-10 lg:grid-cols-2">
           <div>
-            <p className="eyebrow">Let&apos;s Talk</p>
-            <h2 className="mt-2 h2 text-navy">Start your project today</h2>
+            <p className="eyebrow">Begin Your Project</p>
+            <h2 className="mt-2 h2 text-navy">Let&apos;s create something exceptional</h2>
             <p className="mt-4 text-base leading-relaxed text-ink/75">
-              Tell me about your space and I&apos;ll get back to you within two hours during
-              business hours. No pressure, no obligation — just expert advice and a clear
-              plan for your kitchen, wardrobe, bathroom or full fitout.
+              Share a few details about your space and I will respond within two hours
+              during business hours, with considered advice and a clear plan for your
+              kitchen, wardrobe, bathroom or complete interior fitout.
             </p>
             <ul className="mt-6 space-y-2 text-sm text-ink/70">
               <li className="flex items-center gap-2">
