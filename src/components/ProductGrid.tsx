@@ -6,7 +6,7 @@ import ProductCard from "./ProductCard";
 import Modal from "./Modal";
 import LeadForm from "./LeadForm";
 import { WhatsAppIcon } from "./Icons";
-import { whatsappLink, whatsappMessages } from "@/lib/config";
+import { whatsappLink, whatsappMessages, assetPath } from "@/lib/config";
 import type { Product } from "@/lib/media";
 import type { ProductCategoryKey } from "@/lib/config";
 
@@ -104,7 +104,7 @@ export default function ProductGrid({ products }: { products: Product[] }) {
           <div className="grid md:grid-cols-2">
             <div className="relative aspect-[4/3] bg-sky md:aspect-auto md:min-h-[24rem]">
               <Image
-                src={active.src}
+                src={assetPath(active.src)}
                 alt={active.alt}
                 fill
                 sizes="(max-width: 768px) 100vw, 50vw"

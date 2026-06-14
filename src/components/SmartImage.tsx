@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { useState } from "react";
+import { assetPath } from "@/lib/config";
 
 /**
  * next/image wrapper with:
@@ -50,7 +51,7 @@ export default function SmartImage({
       }`}
     >
       <Image
-        src={src}
+        src={src.startsWith("/") ? assetPath(src) : src}
         alt={alt}
         {...(fill ? { fill: true } : { width: width ?? 800, height: height ?? 600 })}
         sizes={sizes}

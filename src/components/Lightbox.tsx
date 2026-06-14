@@ -3,6 +3,7 @@
 import { useEffect } from "react";
 import Image from "next/image";
 import { Close, ChevronLeft, ChevronRight } from "./Icons";
+import { assetPath } from "@/lib/config";
 
 export interface LightboxItem {
   src: string;
@@ -83,7 +84,7 @@ export default function Lightbox({
 
       <div className="relative flex max-h-[82vh] w-full max-w-5xl flex-1 items-center justify-center">
         <Image
-          src={item.src}
+          src={assetPath(item.src)}
           alt={item.alt}
           width={1600}
           height={1100}

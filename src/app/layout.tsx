@@ -6,7 +6,7 @@ import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import WhatsAppWidget from "@/components/WhatsAppWidget";
 import Analytics from "@/components/Analytics";
-import { siteConfig } from "@/lib/config";
+import { siteConfig, assetPath } from "@/lib/config";
 import { pageTitle } from "@/lib/seo";
 
 const inter = Inter({
@@ -28,8 +28,8 @@ export const metadata: Metadata = {
   authors: [{ name: siteConfig.person.name }],
   creator: siteConfig.person.name,
   icons: {
-    icon: "/favicon.ico",
-    apple: "/favicon.ico",
+    icon: assetPath("/favicon.ico"),
+    apple: assetPath("/icon.png"),
   },
   alternates: {
     canonical: siteConfig.siteUrl + "/",
