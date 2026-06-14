@@ -1,10 +1,12 @@
 import Link from "next/link";
+import Image from "next/image";
 import {
   siteConfig,
   navLinks,
   productCategories,
   whatsappLink,
   whatsappMessages,
+  assetPath,
 } from "@/lib/config";
 import { Mail, Phone, MapPin, Clock } from "./Icons";
 
@@ -17,9 +19,20 @@ export default function Footer() {
         <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-4">
           {/* Brand */}
           <div>
-            <Link href="/" className="text-xl font-semibold">
-              <span className="text-white">Gordon</span>
-              <span className="text-accent">SalesGuru</span>
+            <Link href="/" className="flex items-center gap-2.5 text-xl font-semibold">
+              <span className="relative h-10 w-10 shrink-0 overflow-hidden rounded-pill ring-1 ring-white/20">
+                <Image
+                  src={assetPath("/media/images/gordon/gordon.webp")}
+                  alt="Gordon Odhiambo"
+                  fill
+                  sizes="40px"
+                  className="object-cover"
+                />
+              </span>
+              <span className="leading-none">
+                <span className="text-white">Gordon</span>
+                <span className="text-accent">SalesGuru</span>
+              </span>
             </Link>
             <p className="mt-4 text-sm leading-relaxed text-white/70">
               {siteConfig.person.name} — {siteConfig.person.tagline}. Premium

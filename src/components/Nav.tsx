@@ -1,9 +1,10 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
-import { navLinks } from "@/lib/config";
+import { navLinks, assetPath } from "@/lib/config";
 import { Menu, Close } from "./Icons";
 
 export default function Nav() {
@@ -33,9 +34,20 @@ export default function Nav() {
       }`}
     >
       <nav className="container-x flex h-16 items-center justify-between lg:h-20">
-        <Link href="/" className="flex items-center gap-1 text-lg font-semibold lg:text-xl">
-          <span className="text-navy">Gordon</span>
-          <span className="text-accent">SalesGuru</span>
+        <Link href="/" className="flex items-center gap-2.5 text-lg font-semibold lg:text-xl">
+          <span className="relative h-9 w-9 shrink-0 overflow-hidden rounded-pill ring-1 ring-black/10 lg:h-10 lg:w-10">
+            <Image
+              src={assetPath("/media/images/gordon/gordon.webp")}
+              alt="Gordon Odhiambo, Interior Solutions Expert"
+              fill
+              sizes="40px"
+              className="object-cover"
+            />
+          </span>
+          <span className="leading-none">
+            <span className="text-navy">Gordon</span>
+            <span className="text-accent">SalesGuru</span>
+          </span>
         </Link>
 
         {/* desktop links */}
