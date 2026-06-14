@@ -1,0 +1,45 @@
+# dependencies
+/node_modules
+/.pnp
+.pnp.js
+
+# next.js
+/.next/
+/out/
+
+# production
+/build
+
+# misc
+.DS_Store
+*.pem
+Thumbs.db
+
+# debug
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# local env files (kept out of git — values are set in the host / CI secrets)
+.env*.local
+
+# typescript
+*.tsbuildinfo
+next-env.d.ts
+
+# python
+__pycache__/
+*.pyc
+
+# sitemap output is generated on build (next-sitemap writes into /out)
+/out/sitemap*.xml
+/out/robots.txt
+
+# Raw client uploads are NOT committed: they are large, may be copyrighted, and
+# may carry manufacturer names in their filenames. The brand-free, processed
+# output in /public/media IS committed so the live site always has content.
+# (Drop files in these folders locally and run `npm run preprocess`.)
+/assets/brochures/*
+/assets/images/*
+/assets/videos/*
+!/assets/**/.gitkeep

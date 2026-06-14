@@ -1,0 +1,133 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --navy: #042c53;
+  --blue: #185fa5;
+  --sky: #e6f1fb;
+  --accent: #378add;
+  --ink: #1a1a1a;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  color: var(--ink);
+  background: #ffffff;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* 200ms ease transitions on interactive elements */
+a,
+button,
+input,
+textarea,
+select,
+.transition-base {
+  transition: all 200ms ease;
+}
+
+@layer components {
+  .container-x {
+    @apply mx-auto w-full max-w-container px-5 sm:px-6 lg:px-8;
+  }
+
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-pill px-6 py-3 text-sm font-semibold leading-none transition-base focus:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2;
+  }
+  .btn-navy {
+    @apply btn bg-navy text-white hover:bg-blue;
+  }
+  .btn-accent {
+    @apply btn bg-accent text-white hover:bg-blue;
+  }
+  .btn-whatsapp {
+    @apply btn bg-whatsapp text-white hover:brightness-95;
+  }
+  .btn-outline {
+    @apply btn border-2 border-navy text-navy hover:bg-navy hover:text-white;
+  }
+  .btn-outline-light {
+    @apply btn border-2 border-white text-white hover:bg-white hover:text-navy;
+  }
+
+  .badge {
+    @apply inline-flex items-center rounded-pill bg-sky px-3 py-1 text-xs font-semibold text-blue;
+  }
+
+  .card {
+    @apply overflow-hidden rounded-card bg-white ring-1 ring-black/5 transition-base;
+  }
+
+  .section {
+    @apply py-16 sm:py-20 lg:py-24;
+  }
+
+  .eyebrow {
+    @apply text-sm font-semibold uppercase tracking-wider text-accent;
+  }
+
+  .h1 {
+    @apply text-3xl font-semibold leading-tight sm:text-4xl lg:text-5xl;
+  }
+  .h2 {
+    @apply text-2xl font-semibold leading-tight sm:text-3xl lg:text-4xl;
+  }
+  .h3 {
+    @apply text-xl font-semibold leading-snug sm:text-2xl;
+  }
+}
+
+/* Skeleton shimmer for loading images */
+.skeleton {
+  position: relative;
+  overflow: hidden;
+  background-color: var(--sky);
+}
+.skeleton::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  transform: translateX(-100%);
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0) 0,
+    rgba(255, 255, 255, 0.6) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  animation: shimmer 1.5s infinite;
+}
+@keyframes shimmer {
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+/* Subtle navy hero texture (flat, no heavy gradients) */
+.hero-texture {
+  background-color: var(--navy);
+  background-image: radial-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+  background-size: 22px 22px;
+}
+
+/* Blog prose tuning */
+.prose-gordon {
+  @apply prose prose-lg max-w-none prose-headings:font-semibold prose-headings:text-navy prose-a:text-blue prose-a:no-underline hover:prose-a:underline prose-strong:text-navy prose-img:rounded-card;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}
