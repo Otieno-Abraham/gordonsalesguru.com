@@ -51,15 +51,20 @@ export default function SmartImage({
       }`}
     >
       <Image
+        // Mark loaded immediately if the image is already complete (cached /
+        // priority images can finish before React attaches onLoad).
+        ref={(el) => {
+          if (el && el.complete && el.naturalWidth > 0) setLoaded(true);
+        }}
         src={src.startsWith("/") ? assetPath(src) : src}
         alt={alt}
         {...(fill ? { fill: true } : { width: width ?? 800, height: height ?? 600 })}
         sizes={sizes}
         priority={priority}
         onLoad={() => setLoaded(true)}
-        className={`${fill ? "object-cover" : ""} transition-opacity duration-500 ${
-          loaded ? "opacity-100" : "opacity-0"
-        } ${imgClassName}`}
+        // The image is ALWAYS visible; the skeleton sits behind it and is simply
+        // covered once the (opaque) photo paints. Never gate visibility on onLoad.
+        className={`${fill ? "object-cover" : ""} ${imgClassName}`}
       />
     </div>
   );
